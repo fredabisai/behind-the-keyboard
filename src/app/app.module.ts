@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { AdminLoginComponent } from './login/admin-login/admin-login.component';
 import { ExpertLoginComponent } from './login/expert-login/expert-login.component';
 import { UserLoginComponent } from './login/user-login/user-login.component';
+import { PostListComponent } from './posts/post-list/post-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminLoginComponent,
     ExpertLoginComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,
