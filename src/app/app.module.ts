@@ -7,6 +7,7 @@ import { AdminLoginComponent } from './login/admin-login/admin-login.component';
 import { ExpertLoginComponent } from './login/expert-login/expert-login.component';
 import { UserLoginComponent } from './login/user-login/user-login.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
+import { NavbarComponent } from './common/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PostListComponent } from './posts/post-list/post-list.component';
     AdminLoginComponent,
     ExpertLoginComponent,
     UserLoginComponent,
-    PostListComponent
+    PostListComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
