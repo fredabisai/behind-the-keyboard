@@ -4,11 +4,16 @@ import { AdminLoginComponent } from './login/admin-login/admin-login.component';
 import { ExpertLoginComponent } from './login/expert-login/expert-login.component';
 import { UserLoginComponent } from './login/user-login/user-login.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
+import { ProfileComponent } from './common/profile/profile.component';
 
 const routes: Routes = [
   {
      path: '',
      component: PostListComponent
+  },
+  {
+     path: 'profile',
+     component: ProfileComponent
   },
   {
     path: 'login',
