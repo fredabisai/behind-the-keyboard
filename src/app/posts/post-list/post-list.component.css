@@ -1,0 +1,10 @@
+
+ .answers-section{
+   background: #ccc;
+   box-sizing: border-box;
+   margin: 5px 5px;
+   padding: 20px;
+ }
+ .answers-label{
+   cursor: pointer;
+ }
