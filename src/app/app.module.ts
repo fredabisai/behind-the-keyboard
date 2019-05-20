@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminLoginComponent } from './login/admin-login/admin-login.component';
 import { ExpertLoginComponent } from './login/expert-login/expert-login.component';
 import { UserLoginComponent } from './login/user-login/user-login.component';
@@ -10,6 +11,8 @@ import { PostListComponent } from './posts/post-list/post-list.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { AddQuestionComponent } from './posts/add-question/add-question.component';
 import { ProfileComponent } from './common/profile/profile.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PostService } from './posts/post.service';
 
 @NgModule({
   declarations: [
@@ -24,9 +27,12 @@ import { ProfileComponent } from './common/profile/profile.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
