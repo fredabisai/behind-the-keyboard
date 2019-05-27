@@ -13,6 +13,7 @@ import { AddQuestionComponent } from './posts/add-question/add-question.componen
 import { ProfileComponent } from './common/profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostService } from './posts/post.service';
+import { UserLoginService } from './login/user-login/user-login.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { PostService } from './posts/post.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [PostService],
+  providers: [PostService, UserLoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

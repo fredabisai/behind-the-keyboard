@@ -7,7 +7,6 @@ import { PostService } from '../post.service';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
-  answers_open = false;
   constructor(private postService: PostService) {}
 
   ngOnInit() {
