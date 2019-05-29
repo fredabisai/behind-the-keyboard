@@ -37,7 +37,9 @@ export class UserLoginComponent implements OnInit {
             'login_credentials',
             JSON.stringify(credentials)
           );
+          console.log('LOGIN', res);
           sessionStorage.setItem('user_data', JSON.stringify(res.data));
+          sessionStorage.setItem('user_type', 'User');
           this.userLoginService.changeLoginStatus(true);
           this.router.navigate(['/']);
         },

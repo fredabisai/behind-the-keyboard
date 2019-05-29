@@ -14,6 +14,7 @@ import { ProfileComponent } from './common/profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostService } from './posts/post.service';
 import { UserLoginService } from './login/user-login/user-login.service';
+import { LoginGuard } from './login/login.guard';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { UserLoginService } from './login/user-login/user-login.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [PostService, UserLoginService],
+  providers: [PostService, UserLoginService, LoginGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

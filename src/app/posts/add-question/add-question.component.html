@@ -1,8 +1,24 @@
-<form>
+<form
+  [formGroup]="questionForm"
+  (ngSubmit)="onSubmit(element)"
+  #element="ngForm"
+  novalidate
+>
   <div class="form-group">
-    <textarea class="form-control" rows="4" placeholder="Add new question"></textarea>
+    <textarea
+      class="form-control"
+      rows="4"
+      placeholder="Add new question"
+      formControlName="question"
+    ></textarea>
   </div>
-  <div style="text-align: right; "  class="form-group">
-    <button type="submit" class="btn btn-primary" >Post</button>
+  <div style="text-align: right; " class="form-group">
+    <button
+      type="submit"
+      [disabled]="!questionForm.valid"
+      class="btn btn-primary"
+    >
+      Post
+    </button>
   </div>
 </form>

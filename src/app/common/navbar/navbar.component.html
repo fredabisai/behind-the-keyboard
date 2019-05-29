@@ -19,7 +19,7 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item" *ngIf="isLoggedIn">
-        <a class="nav-link">Profile</a>
+        <a class="nav-link" [routerLink]="['/profile']">Profile</a>
       </li>
       <li class="nav-item" *ngIf="isLoggedIn">
         <a class="nav-link" (click)="logOut()" href="#">Logout</a>

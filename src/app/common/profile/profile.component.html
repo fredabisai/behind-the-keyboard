@@ -1,33 +1,32 @@
 <app-navbar></app-navbar>
 <div class="container">
-    <div class="jumbotron">
+  <div class="jumbotron">
+    <h2 style="text-align:center; "></h2>
 
-      <h2 style="text-align:center; "></h2>
-
-      <div style="margin: auto;" class="col-md-5 card">
-        <div class="card-header">
-          Profile
-        </div>
-        <div class="card-body">
-           <table class="table">
-              <tr>
-                <th>Firstname</th>
-                <td>Frank</td>
-              </tr>
-              <tr>
-                  <th>Lastname</th>
-                  <td>Frank</td>
-              </tr>
-              <tr>
-                <th>Email</th>
-                <td>frank@myemail.com</td>
-              </tr>
-              <tr>
-                <th>Phone</th>
-                <td>+255672655100</td>
-              </tr>
-           </table>
-        </div>
+    <div style="margin: auto;" class="col-md-5 card">
+      <div class="card-header">
+        Profile
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <tr *ngIf="user_type !== 'User'">
+            <th>Firstname</th>
+            <td>Frank</td>
+          </tr>
+          <tr *ngIf="user_type !== 'User'">
+            <th>Lastname</th>
+            <td>Frank</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td>{{ user_info.email }}</td>
+          </tr>
+          <tr *ngIf="user_type !== 'User'">
+            <th>Phone</th>
+            <td>+255672655100</td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>
+</div>

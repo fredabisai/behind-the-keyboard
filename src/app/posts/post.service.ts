@@ -17,4 +17,7 @@ export class PostService {
   getPosts() {
     return this.httpClient.get<Results>(this.url + 'questions');
   }
+  addQuestion(data) {
+    return this.httpClient.post<Results>(this.url + 'question/add', data);
+  }
 }

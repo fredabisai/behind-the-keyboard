@@ -5,37 +5,39 @@ import { ExpertLoginComponent } from './login/expert-login/expert-login.componen
 import { UserLoginComponent } from './login/user-login/user-login.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { ProfileComponent } from './common/profile/profile.component';
+import { LoginGuard } from './login/login.guard';
 
 const routes: Routes = [
   {
-     path: '',
-     component: PostListComponent
+    path: '',
+    component: PostListComponent
   },
   {
-     path: 'profile',
-     component: ProfileComponent
+    path: 'profile',
+    canActivate: [LoginGuard],
+    component: ProfileComponent
   },
   {
     path: 'login',
     children: [
-        {
-            path: 'admin',
-            component: AdminLoginComponent
-        },
-        {
-            path: 'expert',
-            component: ExpertLoginComponent
-        },
-        {
-            path: 'user',
-            component: UserLoginComponent
-        }
+      {
+        path: 'admin',
+        component: AdminLoginComponent
+      },
+      {
+        path: 'expert',
+        component: ExpertLoginComponent
+      },
+      {
+        path: 'user',
+        component: UserLoginComponent
+      }
     ]
-},
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -31,6 +31,8 @@ export class NavbarComponent implements OnInit, DoCheck {
     // this.userLoginService.changeLoginStatus(false);
     sessionStorage.removeItem('login_credentials');
     sessionStorage.removeItem('token');
+    sessionStorage.removeItem('user_type');
+    sessionStorage.removeItem('user_data');
     window.location.reload();
   }
 }

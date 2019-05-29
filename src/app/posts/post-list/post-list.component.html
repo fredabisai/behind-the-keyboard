@@ -1,50 +1,49 @@
 <app-navbar></app-navbar>
 <div class="container">
-    <div class="col-md-10">
-      <app-add-question></app-add-question>
+  <div *ngIf="user_type === 'User'" class="col-md-10">
+    <app-add-question></app-add-question>
+  </div>
+  <div class="col-md-10" *ngFor="let question of questions">
+    <h3>Member</h3>
+    <p>
+      {{ question.content }}
+    </p>
+    <div>
+      <span class="badge">Posted {{ question.created_at | date }}</span>
+      <div class="pull-right">
+        <span
+          class="label label-default answers-label"
+          (click)="answers_open = !answers_open"
+          >{{ question.answers.length }} answers</span
+        >
+      </div>
     </div>
-    <div class="col-md-10">
-        <h1>Alice in Wonderland, part dos</h1>
-        <p>'You ought to be ashamed of yourself for asking such a simple question,' added the Gryphon; and then they both sat silent and looked at poor Alice, who felt ready to sink into the earth. At last the Gryphon said to the Mock Turtle, 'Drive on, old fellow! Don't be all day about it!' and he went on in these words:
-        'Yes, we went to school in the sea, though you mayn't believe it—'
-        'I never said I didn't!' interrupted Alice.
-        'You did,' said the Mock Turtle.</p>
-        <div>
-    <span class="badge">Posted 2012-08-02 20:47:04</span>
-    <div class="pull-right">
-      <span class="label label-default answers-label" (click)="answers_open = !answers_open">3 answers</span>
+    <div class="answers-section">
+      <b class="answers-text">Answers</b>
+      <div *ngFor="let answer of question.answers">
+        <h6 style="font-size: 1em; font-weight: bold; margin: 0; padding: 0;">
+          User
+        </h6>
+        <p style="font-size: 0.8em; margin: 0; padding: 0;">
+          {{ answer.content }}
+          <span class="badge pull-right"
+            >Answered {{ answer.created_at | date }}</span
+          >
+        </p>
+      </div>
+      <br />
+
+      <div class="form-group" *ngIf="user_info !== null">
+        <textarea
+          class="form-control"
+          rows="4"
+          placeholder="Answer the question"
+        ></textarea>
+      </div>
     </div>
-         </div>
-         <div class="answers-section">
-           <b *ngIf="answers_open" class="answers-text">Answers</b>
-           <div *ngIf="answers_open">
-              <h6>Frank Martin</h6>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                It has survived not only five centuries, but also the leap into electronic typesetting,
-                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                like Aldus PageMaker including versions of Lorem Ipsum.</p>
-            </div><br>
-            <div *ngIf="answers_open">
-                <h6>Frank Martin</h6>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                  when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                  It has survived not only five centuries, but also the leap into electronic typesetting,
-                  remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                  sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                  like Aldus PageMaker including versions of Lorem Ipsum.</p>
-              </div><br>
-              <div class="form-group">
-                <textarea class="form-control" rows="4" placeholder="Answer the question"></textarea>
-              </div>
-         </div>
 
-
-        <hr>
-        <h1>Revolution has begun!</h1>
+    <hr />
+    <!-- <h1>Revolution has begun!</h1>
         <p>'I am bound to Tahiti for more men.'
             'Very good. Let me board you a moment—I come in peace.' With that he leaped from the canoe, swam to the boat; and climbing the gunwale, stood face to face with the captain.
             'Cross your arms, sir; throw back your head. Now, repeat after me. As soon as Steelkilt leaves me, I swear to beach this boat on yonder island, and remain there six days. If I do not, may lightning strike me!'A pretty scholar,' laughed the Lakeman. 'Adios, Senor!' and leaping into the sea, he swam back to his comrades.</p>
@@ -79,7 +78,7 @@
                <div class="form-group">
                  <textarea class="form-control" rows="4" placeholder="Answer the question"></textarea>
                </div>
-          </div>
-        <hr>
-    </div>
-    </div>
+          </div> -->
+    <hr />
+  </div>
+</div>
