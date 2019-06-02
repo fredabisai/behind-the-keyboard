@@ -15,6 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostService } from './posts/post.service';
 import { UserLoginService } from './login/user-login/user-login.service';
 import { LoginGuard } from './login/login.guard';
+import { UserRegisterComponent } from './user-register/user-register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -25,14 +28,19 @@ import { LoginGuard } from './login/login.guard';
     PostListComponent,
     NavbarComponent,
     AddQuestionComponent,
-    ProfileComponent
+    ProfileComponent,
+    UserRegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot({
+      toastClass: 'toast toast-bootstrap-compatibility-fix'
+    })
   ],
   providers: [PostService, UserLoginService, LoginGuard],
   bootstrap: [AppComponent]

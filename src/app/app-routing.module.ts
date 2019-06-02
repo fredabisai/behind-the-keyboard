@@ -6,6 +6,7 @@ import { UserLoginComponent } from './login/user-login/user-login.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { ProfileComponent } from './common/profile/profile.component';
 import { LoginGuard } from './login/login.guard';
+import { UserRegisterComponent } from './user-register/user-register.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,23 @@ const routes: Routes = [
       {
         path: 'user',
         component: UserLoginComponent
+      }
+    ]
+  },
+  {
+    path: 'register',
+    children: [
+      {
+        path: 'admin',
+        component: AdminLoginComponent
+      },
+      {
+        path: 'expert',
+        component: ExpertLoginComponent
+      },
+      {
+        path: 'user',
+        component: UserRegisterComponent
       }
     ]
   }

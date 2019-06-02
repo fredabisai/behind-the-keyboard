@@ -1,0 +1,99 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="jumbotron">
+    <h2 style="text-align:center; ">BehindTheKeyboard</h2>
+
+    <div style="margin: auto;" class="col-md-5 card">
+      <div class="card-header">
+        User Register
+      </div>
+      <div class="card-body">
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          role="alert"
+          *ngIf="error_msg === 'IsInvalidError'"
+        >
+          Wrong email or password!
+        </div>
+        <form
+          [formGroup]="registerForm"
+          (ngSubmit)="onSubmit(element)"
+          #element="ngForm"
+          novalidate
+        >
+          <div class="form-group">
+            <input
+              name="email"
+              formControlName="email"
+              type="email"
+              class="form-control"
+              placeholder="Email"
+              autocomplete="off"
+              [ngClass]="{ 'is-invalid': f.email.errors && f.email.touched }"
+            />
+            <div
+              class="invalid-feedback"
+              *ngIf="f.email.errors && f.email.touched"
+            >
+              <div *ngIf="f.email.errors.email">Write a valid email!</div>
+              <div *ngIf="f.email.errors.required">Email is required!</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input
+              name="password"
+              formControlName="password"
+              type="password"
+              class="form-control"
+              placeholder="Password"
+              autocomplete="off"
+              [ngClass]="{
+                'is-invalid': f.password.errors && f.password.touched
+              }"
+            />
+            <div
+              class="invalid-feedback"
+              *ngIf="f.password.errors && f.password.touched"
+            >
+              Password is required!
+            </div>
+          </div>
+          <div class="form-group">
+            <input
+              name="password"
+              formControlName="confirm_password"
+              type="password"
+              class="form-control"
+              placeholder="Confirm Password"
+              autocomplete="off"
+              [ngClass]="{
+                'is-invalid':
+                  (f.confirm_password.errors && f.confirm_password.touched) ||
+                  f.confirm_password.errors?.MatchPassword
+              }"
+            />
+            <!-- <div
+              class="invalid-feedback"
+              *ngIf="f.confirm_password.errors && f.confirm_password.touched"
+            >
+              Confirm Password is required!
+            </div> -->
+            <div
+              class="invalid-feedback"
+              *ngIf="f.confirm_password.errors?.MatchPassword"
+            >
+              Passwords do not match!
+            </div>
+          </div>
+          <button
+            [disabled]="!registerForm.valid"
+            type="submit"
+            class="btn btn-sm btn-primary"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

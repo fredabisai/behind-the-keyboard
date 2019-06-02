@@ -25,7 +25,7 @@
         <a class="nav-link" (click)="logOut()" href="#">Logout</a>
       </li>
       <li class="nav-item" *ngIf="!isLoggedIn">
-        <a class="nav-link" href="#">Register</a>
+        <a class="nav-link" [routerLink]="['/register/user']">Register</a>
       </li>
       <li class="nav-item dropdown" *ngIf="!isLoggedIn">
         <a

@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-body
- {
-   font-family: Quicksand;
-   padding-top: 70px;
- }
+.toast-bootstrap-compatibility-fix {
+  opacity: 1;
+}
+body {
+  font-family: Quicksand;
+  padding-top: 70px;
+}
